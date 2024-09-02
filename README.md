@@ -10,6 +10,12 @@ This repository contains a Kotlin Multiplatform project to help you learn about 
 ### Status: 🚧 In progress
 Pokedex is still in under development, and some features are not yet implemented.
 
+## Project structure
+The Kotlin Multiplatform project includes three modules:
+- ***shared*** is a Kotlin module that contains the logic common for both Android and iOS applications – the code I share between platforms. It uses Gradle as the build system to help automate the build process.
+- ***composeApp*** is a Kotlin module that builds into an Android application. It uses Gradle as the build system. The composeApp module depends on and uses the shared module as a regular Android library.
+- ***iosApp*** is an Xcode project that builds into an iOS application. It depends on and uses the shared module as an iOS framework. The shared module can be used as a regular framework or as a CocoaPods dependency.
+
 ## API
 <img src="https://user-images.githubusercontent.com/24237865/83422649-d1b1d980-a464-11ea-8c91-a24fdf89cd6b.png" align="right" width="21%"/>
 
