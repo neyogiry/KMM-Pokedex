@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class PokedexRemoteDataSource(
-    private val apiService: PokedexApi
+    private val apiService: ApiServices
 ) : PokedexDataSource {
 
     override val pokedex: Flow<List<Pokemon>>

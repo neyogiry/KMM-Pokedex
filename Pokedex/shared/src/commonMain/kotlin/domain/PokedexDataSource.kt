@@ -1,6 +1,5 @@
 package domain
 
-import domain.Pokemon
 import kotlinx.coroutines.flow.Flow
 
 interface PokedexDataSource {
