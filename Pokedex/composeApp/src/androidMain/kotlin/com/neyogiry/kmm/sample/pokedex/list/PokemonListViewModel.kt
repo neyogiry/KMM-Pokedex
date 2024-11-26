@@ -2,7 +2,7 @@ package com.neyogiry.kmm.sample.pokedex.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import domain.Repository
+import domain.PokedexRepository
 import domain.Pokemon
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class PokemonListViewModel(
-    private val repository: Repository
+    private val repository: PokedexRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(PokemonListViewState())

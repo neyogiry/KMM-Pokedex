@@ -3,7 +3,9 @@ package di
 import data.ApiServices
 import data.PokedexApi
 import data.PokedexRemoteDataSource
+import data.PokedexRepositoryImpl
 import domain.PokedexDataSource
+import domain.PokedexRepository
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
@@ -15,6 +17,7 @@ val sharedModule = module {
     single< HttpClient> { httpClient() }
     single<ApiServices> { PokedexApi(get()) }
     single<PokedexDataSource> { PokedexRemoteDataSource(get()) }
+    single<PokedexRepository> { PokedexRepositoryImpl(get()) }
 }
 
 fun initKoin() {

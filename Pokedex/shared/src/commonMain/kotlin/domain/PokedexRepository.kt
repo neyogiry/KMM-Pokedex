@@ -2,6 +2,6 @@ package domain
 
 import kotlinx.coroutines.flow.Flow
 
-interface Repository {
+interface PokedexRepository {
     fun getPokemonList(): Flow<List<Pokemon>>
 }

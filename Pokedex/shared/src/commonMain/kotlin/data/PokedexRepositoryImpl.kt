@@ -2,12 +2,12 @@ package data
 
 import domain.PokedexDataSource
 import domain.Pokemon
-import domain.Repository
+import domain.PokedexRepository
 import kotlinx.coroutines.flow.Flow
 
-class PokedexRepository(
+class PokedexRepositoryImpl(
     private val dataSource: PokedexDataSource
-) : Repository {
+) : PokedexRepository {
     override fun getPokemonList(): Flow<List<Pokemon>> {
         return dataSource.pokedex
     }
