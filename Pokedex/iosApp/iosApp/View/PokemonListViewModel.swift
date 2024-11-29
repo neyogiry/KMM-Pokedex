@@ -1,0 +1,30 @@
+//
+//  PokemonListViewModel.swift
+//  iosApp
+//
+//  Created by neyogiry on 20/11/24.
+//  Copyright © 2024 orgName. All rights reserved.
+//
+
+import Foundation
+import Shared
+
+@Observable
+final class PokemonListViewModel {
+    
+    private let pokedexRepository: PokedexRepository
+    
+    private var pokedex: [Pokemon] = []
+    
+    init(pokedexRepository: PokedexRepository = KoinDependencies().pokedexRepository) {
+        self.pokedexRepository = pokedexRepository
+        Task { await getPokemonList() }
+    }
+    
+    func getPokemonList() async {
+        for await pokedex in pokedexRepository.getPokemonList() {
+            self.pokedex = pokedex
+        }
+    }
+    
+}
