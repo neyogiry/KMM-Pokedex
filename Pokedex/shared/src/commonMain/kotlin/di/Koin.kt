@@ -11,6 +11,7 @@ import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.core.context.startKoin
+import org.koin.core.module.Module
 import org.koin.dsl.module
 
 val sharedModule = module {
@@ -20,9 +21,12 @@ val sharedModule = module {
     single<PokedexRepository> { PokedexRepositoryImpl(get()) }
 }
 
-fun initKoin() {
+fun initKoin(vararg modules: Module) {
     startKoin {
-        modules(sharedModule)
+        modules(
+            sharedModule,
+            *modules,
+        )
     }
 }
 
