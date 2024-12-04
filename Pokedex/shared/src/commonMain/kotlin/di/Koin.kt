@@ -21,6 +21,17 @@ val sharedModule = module {
     single<PokedexRepository> { PokedexRepositoryImpl(get()) }
 }
 
+private fun httpClient() = HttpClient {
+    install(ContentNegotiation) {
+        json(Json {
+            ignoreUnknownKeys = true
+        })
+    }
+}
+
+/**
+ * Koin initializer for androidApp module
+ */
 fun initKoin(vararg modules: Module) {
     startKoin {
         modules(
@@ -30,10 +41,11 @@ fun initKoin(vararg modules: Module) {
     }
 }
 
-private fun httpClient() = HttpClient {
-    install(ContentNegotiation) {
-        json(Json {
-            ignoreUnknownKeys = true
-        })
+/**
+ * Koin initializer for iosApp module
+ */
+fun initKoin() {
+    startKoin {
+        modules(sharedModule)
     }
 }
