@@ -1,4 +1,4 @@
-package com.neyogiry.kmm.sample.pokedex.list
+package com.neyogiry.kmm.sample.pokedex.view.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,6 +17,10 @@ class PokemonListViewModel(
     private val _state = MutableStateFlow(PokemonListViewState())
     val state: StateFlow<PokemonListViewState>
         get() = _state
+
+    init {
+        load()
+    }
 
     fun load() {
         viewModelScope.launch(Dispatchers.IO) {
