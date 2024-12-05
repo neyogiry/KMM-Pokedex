@@ -9,19 +9,22 @@
 import SwiftUI
 
 struct PokemonListView: View {
+    @State private var viewModel = PokemonListViewModel()
+    
+    private let columns = [GridItem(), GridItem()]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        List {
-            Text("Bulbasaur")
-            Text("Ivysaur")
-            Text("Venusaur")
-            Text("Charmander")
-            Text("Charmeleon")
-            Text("Charizard")
-            Text("Squirtle")
-            Text("Wartortle")
-            Text("Blastoise")
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.pokedex, id: \.name) { pokemon in
+                        PokemonItemView(pokemon: pokemon)
+                    }
+                }
+                .padding(10)
+            }
         }
+        .navigationTitle("Pokedex")
     }
 }
 

@@ -11,17 +11,16 @@ import Shared
 
 @Observable
 final class PokemonListViewModel {
-    
     private let pokedexRepository: PokedexRepository
     
-    private var pokedex: [Pokemon] = []
+    var pokedex: [Pokemon] = []
     
     init(pokedexRepository: PokedexRepository = KoinDependencies().pokedexRepository) {
         self.pokedexRepository = pokedexRepository
         Task { await getPokemonList() }
     }
-    
-    func getPokemonList() async {
+
+    private func getPokemonList() async {
         for await pokedex in pokedexRepository.getPokemonList() {
             self.pokedex = pokedex
         }
