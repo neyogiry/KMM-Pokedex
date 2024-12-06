@@ -23,6 +23,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.koin.androidx.compose)
             implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
