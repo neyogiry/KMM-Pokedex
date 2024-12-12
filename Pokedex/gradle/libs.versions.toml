@@ -10,6 +10,7 @@ androidx-core-ktx = "1.13.0"
 androidx-espresso-core = "3.5.1"
 androidx-lifecycle-viewmodel = "2.8.1"
 androidx-material = "1.11.0"
+androidx-room = "2.7.0-alpha11"
 androidx-test-junit = "1.1.5"
 coil-compose = "3.0.4"
 compose = "1.6.6"
@@ -55,4 +56,5 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "androidx-room" }
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
