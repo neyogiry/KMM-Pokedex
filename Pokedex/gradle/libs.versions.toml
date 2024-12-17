@@ -11,6 +11,7 @@ androidx-espresso-core = "3.5.1"
 androidx-lifecycle-viewmodel = "2.8.1"
 androidx-material = "1.11.0"
 androidx-room = "2.7.0-alpha11"
+androidx-sqliteBundled = "2.5.0-alpha11"
 androidx-test-junit = "1.1.5"
 coil-compose = "3.0.4"
 compose = "1.6.6"
@@ -37,6 +38,7 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle-viewmodel" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room"}
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room"}
+androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "androidx-sqliteBundled" }
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil-compose" }
 coil-network-ktor = { group = "io.coil-kt.coil3", name = "coil-network-ktor2", version.ref = "coil-compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
