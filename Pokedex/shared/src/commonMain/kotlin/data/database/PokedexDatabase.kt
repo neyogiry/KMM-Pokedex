@@ -8,7 +8,9 @@ import data.model.Pokemon
 
 @Database(entities = [Pokemon::class], version = 1)
 @ConstructedBy(AppDatabaseConstructor::class)
-abstract class PokedexDatabase : RoomDatabase()
+abstract class PokedexDatabase : RoomDatabase() {
+    abstract fun pokedexDao(): PokedexDao
+}
 
 @Suppress("NO_ACTUAL_FOR_EXPECT")
 expect object AppDatabaseConstructor : RoomDatabaseConstructor<PokedexDatabase> {
