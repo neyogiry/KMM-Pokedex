@@ -16,3 +16,5 @@ abstract class PokedexDatabase : RoomDatabase() {
 expect object AppDatabaseConstructor : RoomDatabaseConstructor<PokedexDatabase> {
     override fun initialize(): PokedexDatabase
 }
+
+internal const val dbFileName = "pokedex.db"
