@@ -10,6 +10,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -34,13 +35,14 @@ private fun httpClient() = HttpClient {
 /**
  * Koin initializer for androidApp module
  */
-fun initKoin(vararg modules: Module) {
+fun initKoin(vararg modules: Module, appDeclaration: KoinApplication.() -> Unit) {
     startKoin {
         modules(
             sharedModule,
             databaseModule(),
             *modules,
         )
+        appDeclaration()
     }
 }
 
