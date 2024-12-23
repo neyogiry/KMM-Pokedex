@@ -14,6 +14,8 @@ import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
+expect fun databaseModule(): Module
+
 val sharedModule = module {
     single< HttpClient> { httpClient() }
     single<ApiServices> { PokedexApi(get()) }
@@ -36,6 +38,7 @@ fun initKoin(vararg modules: Module) {
     startKoin {
         modules(
             sharedModule,
+            databaseModule(),
             *modules,
         )
     }
@@ -46,6 +49,9 @@ fun initKoin(vararg modules: Module) {
  */
 fun initKoin() {
     startKoin {
-        modules(sharedModule)
+        modules(
+            sharedModule,
+            databaseModule()
+        )
     }
 }
