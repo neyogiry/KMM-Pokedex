@@ -18,6 +18,7 @@ The Kotlin Multiplatform project includes three modules:
 
 ## Requirements
 Kotlin: 2.0.10 <br>
+Android Gradle Plugin: 8.2.2 <br>
 
 ## API
 <img src="https://user-images.githubusercontent.com/24237865/83422649-d1b1d980-a464-11ea-8c91-a24fdf89cd6b.png" align="right" width="21%"/>
