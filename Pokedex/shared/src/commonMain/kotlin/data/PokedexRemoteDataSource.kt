@@ -8,9 +8,8 @@ import kotlinx.coroutines.flow.flow
 class PokedexRemoteDataSource(
     private val apiService: ApiServices
 ) : PokedexDataSource {
-
-    override val pokedex: Flow<List<Pokemon>>
-        get() = flow {
+    override fun getPokemonList(): Flow<List<Pokemon>> {
+        return flow {
             val response = apiService.pokemonList()
             val pokemonList = response.results
                 ?.map { dto ->
@@ -21,4 +20,5 @@ class PokedexRemoteDataSource(
                 } ?: emptyList()
             emit(pokemonList)
         }
+    }
 }
