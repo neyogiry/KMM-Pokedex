@@ -1,5 +1,6 @@
-package data
+package data.api
 
+import data.PokedexResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
