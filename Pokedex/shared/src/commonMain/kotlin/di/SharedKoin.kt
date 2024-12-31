@@ -2,7 +2,7 @@ package di
 
 import data.api.ApiServices
 import data.api.PokedexApi
-import data.PokedexRemoteDataSource
+import data.datasource.PokedexRemoteDataSource
 import data.PokedexRepositoryImpl
 import domain.PokedexDataSource
 import domain.PokedexRepository

@@ -1,4 +1,4 @@
-package data
+package data.datasource
 
 import data.api.ApiServices
 import domain.PokedexDataSource
