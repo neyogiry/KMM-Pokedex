@@ -18,7 +18,13 @@ struct PokemonItemView: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: ImageUtil.imageURL(from: pokemon.url)))
+            AsyncImage(url: URL(string: ImageUtil.imageURL(from: pokemon.url))) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
             Text(pokemon.name)
         }
         .padding(.all, 16)

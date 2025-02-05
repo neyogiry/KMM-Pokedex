@@ -21,6 +21,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil3.compose.AsyncImage
+import com.neyogiry.kmm.sample.pokedex.util.ImageUtil
 import domain.Pokemon
 import org.koin.androidx.compose.koinViewModel
 
@@ -62,6 +64,11 @@ private fun PokemonItem(pokemon: Pokemon) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        AsyncImage(
+            model = ImageUtil.pokemonImageUrl(pokemon.url),
+            contentDescription = null,
+            modifier = Modifier.weight(1f),
+        )
         Text(
             text = pokemon.name,
             fontSize = 16.sp,
