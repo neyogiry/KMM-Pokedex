@@ -8,7 +8,7 @@
 This repository contains a Kotlin Multiplatform project to help you learn about multi-platform development.
 
 > [!TIP]
-> If you want to see the application for different platforms, check out the [iOS](https://github.com/neyogiry/iOS-Pokedex) | [Android](https://github.com/neyogiry/Android-Pokedex) repositories.
+> If you want to see the application for different platforms, check out the [iOS](https://github.com/neyogiry/iOS-Pokedex) | [Android](https://github.com/neyogiry/Android-Pokedex) | [Flutter](https://github.com/neyogiry/Flutter-Pokedex) repositories.
 
 ### Status: 🚧 In progress
 Pokedex is still in under development, and some features are not yet implemented.
