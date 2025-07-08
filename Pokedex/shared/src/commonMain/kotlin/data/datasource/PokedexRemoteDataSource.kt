@@ -1,6 +1,7 @@
 package data.datasource
 
 import data.api.ApiServices
+import data.toDomain
 import domain.PokedexDataSource
 import domain.Pokemon
 import kotlinx.coroutines.flow.Flow
@@ -12,14 +13,7 @@ class PokedexRemoteDataSource(
     override fun getPokemonList(): Flow<List<Pokemon>> {
         return flow {
             val response = apiService.pokemonList()
-            val pokemonList = response.results
-                ?.map { dto ->
-                    Pokemon(
-                        name = dto.name ?: "",
-                        url = dto.url ?: ""
-                    )
-                } ?: emptyList()
-            emit(pokemonList)
+            emit(response.toDomain())
         }
     }
 }
