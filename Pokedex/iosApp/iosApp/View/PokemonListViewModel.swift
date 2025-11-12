@@ -21,8 +21,8 @@ final class PokemonListViewModel {
     }
 
     private func getPokemonList() async {
-        for await pokedex in pokedexRepository.getPokemonList() {
-            self.pokedex = pokedex
+        if let pokemonList = try? await pokedexRepository.getPokemonList() {
+            self.pokedex = pokemonList
         }
     }
     

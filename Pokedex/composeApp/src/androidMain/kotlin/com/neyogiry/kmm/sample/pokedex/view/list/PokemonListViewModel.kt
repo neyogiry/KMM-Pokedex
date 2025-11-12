@@ -25,12 +25,10 @@ class PokemonListViewModel(
     fun load() {
         viewModelScope.launch(Dispatchers.IO) {
             _state.update { PokemonListViewState(isLoading = true) }
-            repository.getPokemonList()
-                .collect { pokemonList ->
-                    _state.update {
-                        PokemonListViewState(pokemonList = pokemonList)
-                    }
-                }
+            val pokemonList = repository.getPokemonList()
+            _state.update {
+                PokemonListViewState(pokemonList = pokemonList)
+            }
         }
     }
 
