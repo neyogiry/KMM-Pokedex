@@ -11,20 +11,29 @@ import SwiftUI
 struct PokemonListView: View {
     @State private var viewModel = PokemonListViewModel()
     
-    private let columns = [GridItem(), GridItem()]
+    private let gridLayout = [
+        GridItem(.flexible(minimum: 150)),
+        GridItem(.flexible(minimum: 150))
+    ]
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: gridLayout, spacing: 16) {
                     ForEach(viewModel.pokedex, id: \.name) { pokemon in
-                        PokemonItemView(pokemon: pokemon)
+                        Button {
+                            print("Tapped on \(pokemon.name)")
+                        } label: {
+                            PokemonItemView(pokemon: pokemon)
+                                .foregroundColor(.primary)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
-                .padding(10)
+                .padding(.horizontal)
             }
+            .navigationTitle("Pokedex")
         }
-        .navigationTitle("Pokedex")
     }
 }
 
